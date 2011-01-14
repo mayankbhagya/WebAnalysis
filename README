@@ -1,0 +1,16 @@
+CRAWLER.PY
+
+A web crawler that fetches URLs from a web page based on anchor tags.
+
+USE_CRAWLER.PY
+
+A simple example demonstrating the use of CRAWLER module.
+
+REPO.PY
+
+A tool that uses the CRAWLER module to fetch web pages and save it as a SVN repository.
+One can also keep updating the repository.
+
+USE_REPO.PY
+
+An illustration of how to use REPO module.
