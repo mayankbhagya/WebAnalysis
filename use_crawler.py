@@ -11,5 +11,6 @@ if len(sys.argv) == 1:
     quit ()
 c = crawler.Crawler (sys.argv[1])
 l = c.crawl ()
-for x in l:
-    print x
+#Uncomment to display the list of URLs
+#for x in l:
+#    print x
