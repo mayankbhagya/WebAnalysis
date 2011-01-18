@@ -12,6 +12,9 @@ def get_abs_url (baseurl, url):
         absurl = urlparse.urljoin (baseurl, url)
     else:
         absurl = url
+    scheme, netloc, path, qs, anchor = urlparse.urlsplit (absurl)
+    anchor = ''
+    absurl = urlparse.urlunsplit((scheme, netloc, path, qs, anchor))
     return absurl
 
 
@@ -25,8 +28,8 @@ class MyParser (HTMLParser.HTMLParser):
         self.url_lst = []
         try:
             self.feed (data)
-        except HTMLParser.HTMLParseError as err:
-            print err
+        except:
+            print 'Invalid HTML!'
 
     def get_url_list (self):
         return self.url_lst
@@ -53,11 +56,11 @@ class Crawler:
     def crawl (self):
         parser = MyParser ()
         for url in self.index:
-            print 'PROCESSING ' + url + '...'
+            #print 'PROCESSING ' + url + '...'
             try:
                 res = urllib2.urlopen (url)
             except urllib2.URLError:
-                print "Erroneous URL!"
+                print "Cannot open URL: " + url
                 continue
             parser.feed_data (res.read ())
             for u in parser.get_url_list ():
