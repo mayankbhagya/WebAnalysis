@@ -1,16 +1,22 @@
-CRAWLER.PY
+CRAWLER
 
 A web crawler that fetches URLs from a web page based on anchor tags.
+Files:
+	crawler.py	:	the main Crawler module
+	use_crawler.py	:	an example showing how to use the Crawler module
 
-USE_CRAWLER.PY
+REPO
 
-A simple example demonstrating the use of CRAWLER module.
+A tool that can create, update, checkout svn repositories. Also it can produce diffs of checked out dirs.
+Files:
+	repo.py		:	the main Repo module
+	use_repo.py	:	an example showing how to use the Repo module
 
-REPO.PY
+DIFFER
 
-A tool that uses the CRAWLER module to fetch web pages and save it as a SVN repository.
-One can also keep updating the repository.
-
-USE_REPO.PY
-
-An illustration of how to use REPO module.
+A tool to produce differences between two html pages. It can also produce diffs of specific elements of two html pages based on a configuration file. Provides a pretty_diff function to print colored output.
+Files:
+	differ.py	:	the main Differ module
+	sample.cfg	:	a sample configuration file
+	use_differ.py	:	an example showing how to use the Differ module
+	
